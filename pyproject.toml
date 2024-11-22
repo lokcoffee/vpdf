@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "vpdf"
+version = "0.1.0"
+description = ""
+authors = ["lokcoffee <fernandoshui@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pypdf = "^5.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
