@@ -48,18 +48,18 @@ def parse_args():
     parser.add_argument('--input', required=True, type=str, help='Input file')
     parser.add_argument('--output', required=True, type=str, help='Output file')
     parser.add_argument('--password', required=True, type=str, help='Password')
-    parser.add_argument('--encrypt', type=str, default='Y', help='default is Y, if N decrypt')
+    parser.add_argument('--encrypt', type=str, default='y', help='default is Y, if N decrypt')
 
     args = parser.parse_args()
     args.encrypt = args.encrypt.lower()
-    pdf_context = PdfContext(args.input, args.output, password, args.encrypt)
+    pdf_context = PdfContext(args.encrypt, args.input, args.output, password)
     return pdf_context
 
 
 
 def main():
     pdf_context: PdfContext = parse_args()
-    if pdf_context.encrypt == "Y":
+    if pdf_context.encrypt == "y":
         en_pdf(pdf_context)
     else:
         de_pdf(pdf_context)

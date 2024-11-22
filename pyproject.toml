@@ -6,10 +6,18 @@ authors = ["lokcoffee <fernandoshui@outlook.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.8,<3.14"
 pypdf = "^5.1.0"
+cx-freeze = "^7.2.5"
+cryptography = ">=3.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[[tool.poetry.source]]
+name = "tsinghua"
+default = true
+url = "http://mirrors.aliyun.com/pypi/simple/"
